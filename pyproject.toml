@@ -1,0 +1,65 @@
+[project]
+name = "dsp2res"
+version = "0.1.0"
+description = "Convert DSP to spectral response"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "ruff>=0.17.0",
+    "numpy>=2.5.4",
+    "matplotlib>=3.11.2",
+]
+
+[project.scripts]
+dsp2res = "dsp2res.main:main"
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14"]
+build-backend = "uv_build"
+
+[tool.ruff]
+target-version = "py314"
+line-length = 88
+indent-width = 4
+exclude = [".git", ".venv"]
+
+[tool.ruff.lint]
+extend-select = [
+    "I",  # isort (imports sorting)
+    "RUF013",  # implicit Optional
+    "UP035",  # deprecated typing import
+    "UP006",  # non-PEP585 annotation
+    "RUF010",  # explicit f-string conversion
+    "UP032",  # f-string over str.format
+    "PIE790",  # unnecessary placeholder
+    "PIE804",  # unnecessary dict kwargs
+    "PIE800",  # unnecessary spread
+    "PIE808",  # unnecessary range start
+    "SIM114",  # if-with-same-arms
+    "SIM118",  # in-dict-keys
+    "SIM401",  # if-else-block-instead-of-dict-get
+    "SIM102",  # collapsible-if
+    "UP008",  # super() call args
+    "UP034",  # extraneous parentheses
+    "PLR1711",  # useless return
+    "PLR1730",  # if-stmt min/max
+    "PLR1733",  # unnecessary dict index lookup
+    "PLR1736",  # unnecessary list index lookup
+    "FURB105",  # print empty string
+    "FURB136",  # if-expr min/max
+    "FURB157",  # verbose Decimal constructor
+    "RET501",  # unnecessary return None
+    "W605",  # invalid escape sequence
+    "RUF022",  # unsorted __all__
+    "G201",  # logging .exception over error(exc_info=True)
+    "EM101",  # raw string in exception message
+    "EM102",  # f-string in exception message
+]
+fixable = ["ALL"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
