@@ -4,13 +4,14 @@ version = "0.1.0"
 description = "Convert DSP to spectral response"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "numpy>=2.5.4",
+    "matplotlib>=3.11.2",
+]
 
 [dependency-groups]
 dev = [
     "ruff>=0.17.0",
-    "numpy>=2.5.4",
-    "matplotlib>=3.11.2",
 ]
 
 [project.scripts]
